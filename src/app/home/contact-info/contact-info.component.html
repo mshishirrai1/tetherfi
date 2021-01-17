@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-row class="border-bottom row-1" > 
+    <ion-col size="10">
+      <div class="heading">Contact Info</div>
+    </ion-col>
+    <ion-col  class="close cursor-pointer" size="2" (click)="closeContact()">
+     <div >x</div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="details-container border-bottom"> 
+    <img [src]="contactActive.profilePic" class="my-img">
+    <ion-col size="12">
+      <div class="name-contact">{{contactActive.name}}</div>
+    </ion-col>
+    <ion-col size="12">
+      <div class="name-id">@{{contactActive.name}}</div>
+    </ion-col>
+  <ion-col size="6">
+    <img src="../../../assets/call.png" class="call-img call-img-1 cursor-pointer">
+  </ion-col>
+   <ion-col size="6">
+    <img src="../../../assets/video-call.png" class="call-img call-img-2 cursor-pointer">
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <div class="info-div">
+      <div class="border-bottom cursor-pointer">Media links and Docs <span class="ar">></span></div>
+      <div class="border-bottom cursor-pointer">Pinned Item <span class="ar">></span></div>
+      <div class="border-bottom ">Groups In Common <ion-badge color="medium">{{ contactActive.commonGroups.length}}</ion-badge> </div>
+    </div>
+  </ion-row>
+  <ion-row *ngFor="let item of contactActive.commonGroups">
+    <ion-col size="2">
+      <img [src]="item.grpImg" class="grp-img">
+    </ion-col>
+      <ion-col size="8">
+        <ion-row class="grp-name">
+          {{item.name}}
+        </ion-row>
+        <ion-row class="grp-contacts">
+          {{item.contacts}}
+        </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>

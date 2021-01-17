@@ -1,0 +1,59 @@
+<ion-content class="border-right" >
+  <ion-row class="border-bottom row-main"> 
+    <ion-col size="12" class="back-icon-container" *ngIf="innerWidth<=768">
+      <img src="../../../assets/back.png" class="back-icon cursor-pointer" (click)="showContactInfo('conact')">
+    </ion-col>
+    <ion-col size="1.5" >
+      <img [src]="contactActive.profilePic" class="profile-pic" (click)="showContactInfo('info')">
+    </ion-col>
+    <ion-col size="7.5" class="name-outer" (click)="showContactInfo('info')">
+      <div class="profile-name">{{contactActive.name}}</div><br>
+    </ion-col>
+    <ion-col size="3" class="header-icon-outer">
+     <ion-row class="header-icon-ow"> 
+       <ion-col size="6"> 
+        <img src="../../../assets/search.png" class="header-icon cursor-pointer">
+       </ion-col>
+       <ion-col size="6" >
+        <img src="../../../assets/attach.png" class="header-icon cursor-pointer">
+      </ion-col>
+     </ion-row> 
+    </ion-col>
+  </ion-row>
+  <ion-row class="outer-container-chat-row"> 
+<ng-container class="outer-container-chat" *ngFor="let item of contactActive.chats;let i=index">
+  <ion-row class="chat-date" *ngIf="item.date != contactActive.chats[i-1]?.date">
+    <ion-col size="12">
+    {{item.date}}
+  </ion-col>
+  </ion-row>
+  <ion-row class="outer-indv" *ngIf="item.user==1">
+    <ion-col size="2">
+  </ion-col>
+    <ion-col size="9" >
+      <div class="chat-me">
+      {{item.text}}
+    </div>
+    </ion-col>
+    <ion-col size="1"  class="me-chat-profile-pic">
+      <img src="../../../assets/me.jpg" class="my-img">
+    </ion-col>
+  </ion-row>
+  <ion-row class="outer-indv" *ngIf="item.user==2">
+    <ion-col size="1" class="other-chat-profile-pic">
+      <img [src]="contactActive.profilePic" class="my-img">
+  </ion-col>
+    <ion-col size="9" >
+      <div class="chat-other">
+      {{item.text}}
+      </div>
+    </ion-col>
+    <ion-col size="2">
+    </ion-col>
+  </ion-row>
+</ng-container>
+  <input type="text" class="type-message type-items" placeholder="Write your message...">
+  <img src="../../../assets/emoji.png" class="emoji-img cursor-pointer type-items">
+  <img src="../../../assets/send.png" class="send-img cursor-pointer type-items">
+  </ion-row>
+</ion-content>

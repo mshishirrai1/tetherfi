@@ -1,20 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-row class="common-outer">
+    <ion-col size="12" size-lg="4" size-md="4" class="ion-no-padding" *ngIf="(innerWidth<=768 && showScreen==='contact-chats') || innerWidth>768"> 
+      <app-contact-chats [contacts]="contacts" (setAtciveChatHistory)="setActiveChat($event)"></app-contact-chats>
+    </ion-col>
+    <ion-col size="12" size-lg="5.5" size-md="5.5" class="ion-no-padding" *ngIf="(innerWidth<=768 && showScreen==='chat-history') || innerWidth>768">
+      <app-chat-details [contactActive]="contacts[activeChatHistory]" (showContactInfoEmit)="showInfoContact($event)"></app-chat-details>
+    </ion-col>
+    <ion-col size="12" ize-lg="2.5" size-md="2.5"  class="ion-no-padding" *ngIf="(innerWidth<=768 && showScreen==='contact-info') || innerWidth>768">
+      <app-contact-info [contactActive]="contacts[activeChatHistory]" (closeContactInfo)="showInfoContact($event)"></app-contact-info>
+    </ion-col>
+  </ion-row>
 </ion-content>

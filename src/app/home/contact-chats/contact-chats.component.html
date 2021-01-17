@@ -1,0 +1,60 @@
+<ion-row>
+  <ion-col size="12" size-lg="2" size-md="2" class="border-right common-padding-top section-1">
+<img src="../../../assets/me.jpg" class="my-img">
+<ion-row class="second-section ">
+  <ion-col size="12" class="img-outer cursor-pointer" >
+    <img src="../../../assets/add.png" class="side-img" >
+  </ion-col>
+  <ion-col size="12" class="hover-click img-outer cursor-pointer">
+    <img src="../../../assets/chat.png" class="side-img">
+  </ion-col>
+  <ion-col size="12" class="img-outer cursor-pointer">
+    <img src="../../../assets/calendar.png" class="side-img">
+  </ion-col>
+  <ion-col size="12" class="img-outer cursor-pointer">
+    <img src="../../../assets/notify.png" class="side-img">
+  </ion-col>
+</ion-row>
+  </ion-col>
+  <ion-col size="12" size-lg="10" size-md="10" class="border-right common-padding-top">
+   <ion-row>
+     <ion-col size="8">
+     
+      <div class="chat-heading">
+        <img src="../../../assets/humberger.png" class="menu-img">
+        Chat
+      </div>
+     </ion-col>
+     <ion-col size="4">
+       <ion-row class="widget-outer"> 
+         <ion-col size="4" class="circle-hover-click cursor-pointer">
+          <img src="../../../assets/group-contact.png" class="header-img">
+         </ion-col>
+         <ion-col size="4" class="cursor-pointer">
+          <img src="../../../assets/emoji.png" class="header-img">
+        </ion-col>
+        <ion-col size="4" class="cursor-pointer">
+          <img src="../../../assets/contact.png" class="header-img">
+        </ion-col>
+       </ion-row>
+    </ion-col>
+   </ion-row>
+   <ion-row>
+     <input type="text" placeholder="Search contact here..." class="search-box">
+   </ion-row>
+   <ion-row *ngFor="let item of contacts;let i=index" class="indv-chat cursor-pointer" [ngClass]="{'active-chat':activeChat===i}"
+   (click)="setActive(i)" (mouseover)="setShadow('set',i)" (mouseout)="setShadow('remove',i)">
+     <ion-col size="3" class="profile-pic-outer">
+      <img [src]="item.profilePic" class="pofile-pic">
+     </ion-col>
+     <ion-col size="6.5" class="pofile-info">
+      <div class="profile-name">{{item.name}}</div> 
+      <div class="profile-last-chat">{{item.chats[item.chats.length-1].text}}</div> 
+    </ion-col>
+    <ion-col size="2.5" class="pofile-info">
+       <div class="chat-time">{{item.chats[item.chats.length-1].time}}</div>
+       <div class="new-notice" *ngIf="item.chats[item.chats.length-1].isNew">1</div>
+    </ion-col>
+   </ion-row>
+  </ion-col>
+  </ion-row>

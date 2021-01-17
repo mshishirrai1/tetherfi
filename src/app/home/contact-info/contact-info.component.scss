@@ -1,0 +1,71 @@
+.heading{
+    font-weight: bold;
+    font-size: 26px;
+    padding-bottom: 23px;
+    padding-top: 20px;
+}
+.close{
+    align-items: center;
+    display: flex;
+    font-size: 22px;
+    color: #d7d8da;
+}
+.my-img{
+    border-radius: 50%;
+    height: 102px;
+    width: 102px;
+    margin: 0 auto;
+}
+.row-1{
+    margin-bottom: 100px;
+    @media (max-width: 768px){
+        margin-bottom: 10px;
+    }
+}
+.details-container{
+    text-align: center;
+    margin: 0 10px;
+}
+.name-contact{
+    font-weight: bold;
+    font-size: 20px;
+}
+.name-id{
+    color:#EC3D08;
+    font-size: 14px;
+}
+.call-img{
+    height: 32px;
+    width: 32px;
+}
+.call-img-1{
+    float:right
+}
+.call-img-2{
+    float: left;
+}
+.ar, ion-badge{
+    float: right;
+}
+.info-div{
+    width: 100%;
+    padding: 0 10px;
+    div{
+        padding: 15px 0;
+        color: #737373;
+    }
+}
+.grp-img{
+    border-radius: 50%;
+    height: 36px;
+    width: 52px;
+    object-fit: contain;
+}
+.grp-name{
+    font-size: 16px;
+    font-weight: bold;
+}
+.grp-contacts{
+    color: #c1bdb7;
+    font-size: 14px;
+}

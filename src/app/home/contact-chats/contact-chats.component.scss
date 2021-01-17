@@ -1,0 +1,121 @@
+
+.my-img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.second-section{
+    padding-top: 60px;
+}
+.side-img{
+    height: 28px;
+    width: 28px;
+    z-index: 3;
+    margin-top: 7px;
+}
+.hover-click{
+    background-color: #221974;
+    height: 52px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 2;
+}
+.circle-hover-click{
+    background-color: #221974;
+    border-radius: 50%;
+    height: 36px;
+}
+.img-outer{
+    margin-top: 20px;
+}
+.chat-heading{
+    font-weight: bold;
+    font-size: 26px;
+}
+.header-img{
+    height: 22px;
+    width: 18px;
+    padding-top: 4px;
+}
+.widget-outer{
+    box-shadow: 5px 0px 23px 0px #d0d0d0;
+    border-radius: 15px;
+}
+.search-box{
+    background-color: #f6f6f6;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    height: 38px;
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding-left: 14px;
+}
+.common-padding-top{
+    padding-top: 30px;
+}
+.section-1{
+    text-align: center;
+}
+.pofile-pic{
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+}
+.profile-name{
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.profile-last-chat{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: #717171;
+}
+.indv-chat{
+    padding: 10px 0px;
+}
+.profile-pic-outer{
+    text-align: center;
+}
+.chat-time{
+    font-size: 12px;
+    color: #717171;
+}
+.new-notice{
+    background-color: #EC3D08;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding-top: 4px;
+    color: white;
+    font-size: 11px;
+    margin: 0 auto;
+}
+.active-chat{
+    background-color: #f6f4f1;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.menu-img{
+    display: none;
+}
+@media only screen and (max-width: 768px){
+    .section-1{
+        display: none;
+    }
+    .menu-img{
+        height: 30px;
+        width: 46px;
+        display: inline-block;
+        padding-top: 10px;
+    }
+}
